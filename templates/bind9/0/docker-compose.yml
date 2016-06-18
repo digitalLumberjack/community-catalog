@@ -1,0 +1,10 @@
+bind9:
+  image: digitallumberjack/docker-bind9:v1.0.0
+  ports: 
+   - "53:53"
+   - "53:53/udp"
+  environment:
+    BIND9_ROOTDOMAIN: ${BIND9_ROOTDOMAIN}
+    BIND9_KEYNAME: ${BIND9_KEYNAME}
+    BIND9_KEY: ${BIND9_KEY}
+    BIND9_FORWARDERS: ${BIND9_FORWARDERS}
