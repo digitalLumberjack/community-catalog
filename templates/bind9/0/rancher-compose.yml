@@ -19,6 +19,12 @@
       description: "The TSIG key. Must be base64 encoded"
       type: "string"
       required: true
+    - variable: "BIND9_PORT"
+      label: "Bind9 port"
+      description: "Bind9 port to expose on host. Will be used to bind both TCP and UDP"
+      type: "string"
+      default: 53
+      required: true
     - variable: "BIND9_FORWARDERS"
       label: "Bind9 dns forwarders"
       description: "The DNS forwarders"
@@ -29,10 +35,11 @@
 bind9:
   scale: 1
   health_check:
-    port: 53
+    port: ${BIND9_PORT}
     interval: 2000
-    initializing_timeout: 60000
+    initializing_timeout: 20000
     unhealthy_threshold: 3
     strategy: recreate
     healthy_threshold: 2
     response_timeout: 2000
+

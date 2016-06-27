@@ -1,8 +1,8 @@
 bind9:
-  image: digitallumberjack/docker-bind9:v1.0.0
+  image: digitallumberjack/docker-bind9:v1.1.0
   ports: 
-   - 53:53/tcp
-   - 53:53/udp
+   - ${BIND9_PORT}:53/tcp
+   - ${BIND9_PORT}:53/udp
   environment:
     BIND9_ROOTDOMAIN: ${BIND9_ROOTDOMAIN}
     BIND9_KEYNAME: ${BIND9_KEYNAME}
