@@ -1,5 +1,5 @@
 bind9:
-  image: digitallumberjack/docker-bind9:v1.1.0
+  image: digitallumberjack/docker-bind9:v1.2.0
   ports: 
    - ${BIND9_PORT}:53/tcp
    - ${BIND9_PORT}:53/udp
@@ -8,3 +8,4 @@ bind9:
     BIND9_KEYNAME: ${BIND9_KEYNAME}
     BIND9_KEY: ${BIND9_KEY}
     BIND9_FORWARDERS: ${BIND9_FORWARDERS}
+    RANCHER_ENV: "true"

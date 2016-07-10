@@ -29,7 +29,7 @@
       label: "Bind9 dns forwarders"
       description: "The DNS forwarders"
       type: "string"
-      default: 8.8.8.8;8.8.8.4;
+      default: 8.8.8.8;8.8.4.4;
       required: true
 
 bind9:
